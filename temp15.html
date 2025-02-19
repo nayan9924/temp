@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Script>
+        let value=0
+        function inc(){
+            value++;
+            data.innerHTML=value
+        }
+        function dec(){
+            if(value>0){
+            value--;
+            }
+            data.innerHTML=value
+        }
+    </Script>
+</head>
+<body>
+    <button onclick="dec()">-</button>
+    <span id="data"></span>
+    <button onclick="inc()">+</button>
+</body>
+</html>
