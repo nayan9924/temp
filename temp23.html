@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="assets/ball.png" width="100px" id="ball" />
+    <img src="assets/bucket.webp" width="200px" id="bucket" />
+    <script>
+        ball.style.position = "absolute";
+        bucket.style.position = "absolute";
+        let up = 0;
+        let l=0;
+        let left = 0;
+        let down = 500;
+        bucket.style.top = down + "px";
+        let b=document.body;
+        b.onkeydown = (e) => {
+            if(e.key == "ArrowLeft") left -= 10;
+            if(e.key == "ArrowRight") left +=10; 
+            bucket.style.left = left + "px";
+        }
+        function ballfall() {
+            up += 1;
+            if (up > 500) {
+                up = 1;
+                l = Math.random() * 1000;
+            }
+            ball.style.top = up + "px";
+            ball.style.left = l + "px";
+            setTimeout(ballfall,10);
+        }
+        ballfall();
+    </script>
+</body>
+
+</html>
